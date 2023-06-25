@@ -24,7 +24,6 @@ func main() {
 	var selectedOption string
 	fmt.Print(`Select from options above: `)
 	fmt.Scanln(&selectedOption)
-	fmt.Printf("type: %T", selectedOption)
 	fmt.Println()
 	if selectedOption == "1" {
 		generateKeyPair()
@@ -32,6 +31,8 @@ func main() {
 		createAccount()
 	} else if selectedOption == "3" {
 		sendPayment()
+	} else {
+		fmt.Println("Invalid input")
 	}
 }
 
