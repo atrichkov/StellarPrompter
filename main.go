@@ -24,7 +24,6 @@ func main() {
 	var selectedOption string
 	fmt.Print(`Select from options above: `)
 	fmt.Scanln(&selectedOption)
-	fmt.Println()
 	if selectedOption == "1" {
 		generateKeyPair()
 	} else if selectedOption == "2" {
@@ -42,8 +41,8 @@ func generateKeyPair() {
 		log.Fatal(err)
 	}
 
-	fmt.Println("Your seed: " + pair.Seed())
-	fmt.Println("Your address " + pair.Address())
+	fmt.Printf("Generated seed: %s", pair.Seed())
+	fmt.Printf("Generated address %s", pair.Address())
 }
 
 func createAccount() {
