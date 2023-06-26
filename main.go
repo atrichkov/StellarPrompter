@@ -14,15 +14,14 @@ import (
 
 func main() {
 
-	initMsg := `Hello from stellar bot choose from options below: \n
-  1. Generate keypair
-  2. Create account
-  3. Send payment`
+	initMsg := `Hello from stellar bot choose from options below:
+[1] Generate keypair
+[2] Create account
+[3] Send payment`
 
 	fmt.Println(initMsg)
 
 	var selectedOption string
-	fmt.Print(`Select from options above: `)
 	fmt.Scanln(&selectedOption)
 	if selectedOption == "1" {
 		generateKeyPair()
@@ -41,8 +40,8 @@ func generateKeyPair() {
 		log.Fatal(err)
 	}
 
-	fmt.Printf("Generated seed: %s", pair.Seed())
-	fmt.Printf("Generated address %s", pair.Address())
+	fmt.Printf("Generated seed: %s \n", pair.Seed())
+	fmt.Printf("Generated address %s \n", pair.Address())
 }
 
 func createAccount() {
